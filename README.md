@@ -1,62 +1,43 @@
-# Configuring a Site-to-Site VPN in Azure
+# ProtonVPN Connection Setup
 
 ## Overview
-This repository demonstrates the configuration of a secure Site-to-Site VPN connection between an on-premises network and an Azure virtual network to enable secure communication and resource sharing.
+This repository documents the configuration of ProtonVPN on an Azure-hosted Windows 10 Virtual Machine to establish secure tunneling and encrypted internet traffic.
 
 ## Environments and Technologies Used
-- Microsoft Azure (Virtual Network, Gateway Subnet, VPN Gateway)
-- Local Network Gateway
-- Windows 10 VM (Client)
-- PowerShell and Azure Portal
+- Microsoft Azure Virtual Machine
+- ProtonVPN (Free Plan)
+- Remote Desktop Connection
 
 ## Operating Systems Used
-- Windows 10
-- Azure Cloud Environment
+- Windows 10 (21H2)
 
 ## High-Level Steps
-1. Create a Virtual Network and Gateway Subnet in Azure.
-2. Configure a Virtual Network Gateway for VPN.
-3. Set up a Local Network Gateway to simulate on-premises.
-4. Connect the gateways using a shared key.
-5. Verify connectivity between the on-premises and Azure networks.
+1. Created a free ProtonVPN account.
+2. Downloaded and installed the ProtonVPN client within the Azure VM.
+3. Logged into ProtonVPN and selected a VPN server in another country (e.g., Japan).
+4. Verified new IP address using WhatIsMyIPAddress.com.
 
 ## Actions and Observations
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Creating Virtual Network"/>
+<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Installing ProtonVPN Client"/>
 </p>
 <p>
-Created an Azure Virtual Network and configured a dedicated gateway subnet for VPN connectivity.
-</p>
-<br />
-
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Configuring VPN Gateway"/>
-</p>
-<p>
-Deployed a VPN Gateway in Azure and linked it to the Virtual Network, enabling routing between networks.
+Installed ProtonVPN on the Azure VM and authenticated the connection using a free account.
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Creating Local Network Gateway"/>
+<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Selecting VPN Server"/>
 </p>
 <p>
-Configured a Local Network Gateway representing the on-premises side of the connection.
-</p>
-<br />
-
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Connecting Gateways"/>
-</p>
-<p>
-Established a Site-to-Site VPN connection using a shared key and verified successful handshake and connectivity through PowerShell.
+Connected to a VPN server in Japan to test routing and encryption of outbound traffic.
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Testing Connectivity"/>
+<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Verifying New IP"/>
 </p>
 <p>
-Tested secure communication between the on-premises network and Azure using ping and tracert commands.
+Confirmed that the VM’s IP address now reflected the VPN’s region (Japan), confirming tunnel success.
 </p>
 <br />
